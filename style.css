@@ -1,0 +1,66 @@
+*{
+    font-family: Trebuchet MS;
+}
+
+body, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+p, li, h1, h2, h3, h4{
+    color: #4e4e4e;
+}
+
+body{
+    background: #f7f7f7;
+}
+
+.wrapper{
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+header{
+    background: #e5e5e5;
+    padding: 20px 0;
+}
+
+header h1{
+    margin: 0;
+    width: 250px;
+    float: left;
+}
+
+header:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+
+header h2{
+    margin: 0;
+    float: right;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+#education{
+    margin-top: 60px;
+}
+
+#education li{
+    float: left;
+    width: 48%;
+    padding: 1%;
+    text-align: center;
+    list-style-type: none;
+    line-height: 1.6em;
+}
+
+#education:after{
+    display: block;
+    content: "";
+    clear: both;
+}
