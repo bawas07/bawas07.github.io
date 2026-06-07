@@ -189,6 +189,8 @@ h1 .accent { color: var(--accent); }
   display: flex; flex-direction: column; gap: 10px;
 }
 .proj-card:hover { border-color: var(--border-bright); background: var(--bg-hover); }
+.proj-card[data-github] { cursor: pointer; position: relative; }
+.proj-card[data-github].open { border-color: var(--border-bright); }
 .proj-card.featured {
   border-color: var(--accent-dim); grid-column: 1 / -1;
   flex-direction: row; gap: 28px; align-items: flex-start;
@@ -241,6 +243,40 @@ h1 .accent { color: var(--accent); }
 .anon-tag {
   font-family: var(--font-mono); font-size: 10px; padding: 2px 6px;
   border-radius: 3px; border: 1px solid var(--border); color: var(--text-dim);
+}
+
+/* ── project popover ── */
+.proj-popover {
+  position: absolute;
+  top: 8px; right: 8px;
+  z-index: 10;
+  background: var(--bg);
+  border: 1px solid var(--border-bright);
+  border-radius: 8px;
+  padding: 4px;
+  min-width: 180px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+  opacity: 0; transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.proj-card.open .proj-popover {
+  opacity: 1; transform: translateY(0);
+  pointer-events: auto;
+}
+.proj-popover a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--text-muted); text-decoration: none;
+  border-radius: 5px;
+  transition: color 0.12s, background 0.12s;
+}
+.proj-popover a:hover { color: var(--text); background: var(--bg-hover); }
+.proj-popover a svg { width: 14px; height: 14px; flex-shrink: 0; }
+.proj-popover .popover-divider {
+  height: 1px; margin: 2px 8px;
+  background: var(--border);
 }
 
 /* ── skills ── */
